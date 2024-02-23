@@ -1,0 +1,93 @@
+.headers {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.headers p {
+    color: white;
+}
+
+.logout {
+    height: 40px;
+    width: 40px;
+}
+
+.updatebutton {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    font-weight: 600;
+
+}
+
+.stopbutton {
+    padding: 10px 20px;
+    background-color: red;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stopbutton p {
+    font-weight: bold;
+}
+
+.displayname {
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.innerBox {
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.bodyStyle {
+    background-color: rgb(246, 246, 246);
+    height: 92.5vh;
+    padding: 20px;
+}
+
+.boxcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    width: calc(50% - 10px);
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    /* width: 100%; */
+    margin: 10px 0;
+    -webkit-box-shadow: 15px 14px 16px -14px rgba(122, 102, 122, 0.36);
+    -moz-box-shadow: 15px 14px 16px -14px rgba(122, 102, 122, 0.36);
+    box-shadow: 15px 14px 16px -14px rgba(122, 102, 122, 0.36);
+}
+
+.companyName {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.checkimage {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+.completedview {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}

@@ -1,0 +1,17 @@
+.backheader {
+    display: flex;
+    width: 100%;
+    background: #000;
+  }
+.backheader div{
+	color: #fff;
+	padding: 6px 15px;
+	display: flex;
+	align-items: center;
+    cursor: pointer;
+
+}
+.backheader div span {
+	margin-right: 10px;
+	font-size: 22px;
+}

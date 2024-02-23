@@ -1,0 +1,87 @@
+.ordersdetails_action {
+	display: flex;
+	justify-content: space-between;
+    margin-bottom: 10px;
+    font-family: poppins;
+}
+.order_action {
+	text-align: right;
+}
+.orders_details{
+    font-size: 15px;
+}
+.orders_details h4{
+   font-weight: 500;
+}
+.orders_details strong{
+    font-weight: 500;
+}
+.button{
+    padding: 8px 24px;
+    font-size: 15px;
+    border: none;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+.gray_btn{
+background-color: rgb(187, 187, 187);
+}
+.yellow_btn{
+background-color: rgb(255, 169, 11);
+}
+.order_action_button {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 5px;
+}
+.order_table_wrapper table{
+    width: 100%;
+    font-size: 15px;
+}
+.order_table_wrapper table th{
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+}
+.order_table_wrapper table, .order_table_wrapper table th, .order_table_wrapper table td {
+    border: 1px solid rgb(162, 162, 162);
+    border-collapse: collapse;
+  }
+  .order_table_wrapper table th{
+    padding: 10px;
+  }
+  .order_table_wrapper table th, .order_table_wrapper table td {
+padding: 5px;
+text-align: center;
+  }
+  .order_table_wrapper table th{
+    padding: 10px;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+  }
+  .restock,.status{
+    border: 1px solid #000;
+    display: block;
+    margin-top: 3px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .order_table_wrapper table tr:nth-child(even) td{
+    background-color: #bcbcbc36;
+  }
+  .orders_wrapper{
+    padding: 20px;
+  }
+  .order_table_wrapper table th:first-child{
+    border-left: 1px solid #000;
+  }
+  .order_table_wrapper table th:last-child{
+    border-right: 1px solid #000;
+  }
+  .Loc{
+    display: block;
+  }
