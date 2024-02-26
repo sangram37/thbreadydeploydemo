@@ -5,7 +5,7 @@ import { data } from "../../Constans/Jsonassets";
 import { useNavigate } from "react-router-dom";
 interface Props {}
 
-const Home: React.FC<Props> = (props: any) => {
+const Home: React.FC<Props> = () => {
   const navigate = useNavigate();
 
   const gotoOrders = () => {

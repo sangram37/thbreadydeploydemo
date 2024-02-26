@@ -3,7 +3,7 @@ interface Item {
   quantity: number;
   productId?: number;
   image?: string;
-  discount_type?: 'percentage' | 'flat';
+  discount_type?: "percentage" | "flat";
   discount_amount?: number;
   order_amount?: number;
 }
@@ -13,7 +13,7 @@ export function generateImageLinks(list: Item[]): string[] {
   if (list.length > 0) {
     for (let i = 0; i < list.length; i++) {
       if (list[i].image) {
-        imageLinks.push(list[i].image);
+        imageLinks.push(list[i].image!);
       }
     }
     return imageLinks;
@@ -23,12 +23,12 @@ export function generateImageLinks(list: Item[]): string[] {
 }
 
 export function createItemForPlaceOrder(
-  cartList: Item[],
-  merchant_id: number
+  cartList: Item[]
+  // merchant_id: number
 ): Item[] {
   let cartListLocal: Item[] = [];
 
-  cartList.map((item, index) => {
+  cartList.map((item) => {
     let newObj: Item = {
       id: item.id,
       quantity: item.quantity,
@@ -63,11 +63,14 @@ export function createOrderDetailsForPlaceOrder(
   return detailsOrder;
 }
 
-export function getDiscountValue(params: any, item: Item): number {
+export function getDiscountValue(params: any, item: any): number {
   switch (item.discount_type) {
-    case 'percentage':
-      return ((item.discount_amount / 100) * params.order_amount).toFixed(2);
-    case 'flat':
+    case "percentage":
+      return parseFloat(
+        (((item.discount_amount ?? 0) / 100) * params.order_amount).toFixed(2)
+      );
+
+    case "flat":
       return item.discount_amount;
     default:
       return 0;

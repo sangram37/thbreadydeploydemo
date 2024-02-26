@@ -1,9 +1,9 @@
-import { CallApi } from '../../../CallApi';
+import { CallApi } from "../../../CallApi";
 import {
   start_end_time,
   get_active_picklist_client,
-} from '../../../Constans/ApiConstans';
-import * as types from '../../Types';
+} from "../../../Constans/ApiConstans";
+import * as types from "../../Types";
 
 export const setIncriment = (status: any) => {
   return async (dispatch: any) => {
@@ -33,15 +33,18 @@ export const setShiftdata = (status: any) => {
     // return cb(true, false);
   };
 };
-export const starttime = (payload: any, navigation: any, lantype: any) => {
+export const starttime = (
+  payload: any
+  // navigation: any, lantype: any
+) => {
   return async (dispatch: any) => {
     dispatch({ type: types.LOADER, payload: true });
-    await CallApi('POST', start_end_time, payload)
-      .then(res => {
-        console.log(res, 'dashboarddata');
+    await CallApi("POST", start_end_time, payload)
+      .then((res) => {
+        console.log(res, "dashboarddata");
         dispatch({ type: types.LOADER, payload: false });
         if (res.success === 1) {
-          dispatch({ type: types.TIME_LOG, payload: 'Start' });
+          dispatch({ type: types.TIME_LOG, payload: "Start" });
           // dispatch({type: types.HOME_SCREEN_DATA, payload: res.data});
 
           // ToastMessage({
@@ -60,7 +63,7 @@ export const starttime = (payload: any, navigation: any, lantype: any) => {
           dispatch({ type: types.USER_LOGIN_MESSAGE, payload: res.message });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch({ type: types.LOADER, payload: false });
         // ToastMessage({
         //   type: 'type_danger',
@@ -68,25 +71,28 @@ export const starttime = (payload: any, navigation: any, lantype: any) => {
         //   position: 'bottom',
         //   time: 3000,
         // }),
-        console.log(error, 'Error While logging in.');
+        console.log(error, "Error While logging in.");
 
         dispatch({
           type: types.USER_LOGIN_MESSAGE,
-          payload: 'Error in server side.',
+          payload: "Error in server side.",
         });
       });
   };
 };
-export const endtime = (payload: any, navigation: any, lantype: any) => {
+export const endtime = (
+  payload: any
+  // navigation: any, lantype: any
+) => {
   return async (dispatch: any) => {
     dispatch({ type: types.LOADER, payload: true });
-    await CallApi('POST', start_end_time, payload)
-      .then(res => {
+    await CallApi("POST", start_end_time, payload)
+      .then((res) => {
         console.log(res);
         dispatch({ type: types.LOADER, payload: false });
         if (res.success === 1) {
           // navigation.replace('Login');
-          dispatch({ type: types.TIME_LOG, payload: 'Stop' });
+          dispatch({ type: types.TIME_LOG, payload: "Stop" });
           // dispatch({type: types.USER_DATA, payload: res.data});
 
           // ToastMessage({
@@ -105,7 +111,7 @@ export const endtime = (payload: any, navigation: any, lantype: any) => {
           dispatch({ type: types.USER_LOGIN_MESSAGE, payload: res.message });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch({ type: types.LOADER, payload: false });
         // ToastMessage({
         //   type: 'type_danger',
@@ -113,22 +119,25 @@ export const endtime = (payload: any, navigation: any, lantype: any) => {
         //   position: 'bottom',
         //   time: 3000,
         // }),
-        console.log(error, 'Error While logging in.');
+        console.log(error, "Error While logging in.");
 
         dispatch({
           type: types.USER_LOGIN_MESSAGE,
-          payload: 'Error in server side.',
+          payload: "Error in server side.",
         });
       });
   };
 };
 
-export const _ActivePicklistClint = (payload: any, lantype: any) => {
+export const _ActivePicklistClint = (
+  payload: any
+  // lantype: any
+) => {
   return async (dispatch: any) => {
     dispatch({ type: types.LOADER, payload: true });
-    await CallApi('POST', get_active_picklist_client, payload)
-      .then(res => {
-        console.log(res, '_ActivePicklistClint,get_active_picklist_client');
+    await CallApi("POST", get_active_picklist_client, payload)
+      .then((res) => {
+        console.log(res, "_ActivePicklistClint,get_active_picklist_client");
         dispatch({ type: types.LOADER, payload: false });
         if (res.success === 1) {
           // navigation.replace('Login');
@@ -153,7 +162,7 @@ export const _ActivePicklistClint = (payload: any, lantype: any) => {
           dispatch({ type: types.USER_LOGIN_MESSAGE, payload: res.message });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch({ type: types.LOADER, payload: false });
         // ToastMessage({
         //   type: 'type_danger',
@@ -161,11 +170,11 @@ export const _ActivePicklistClint = (payload: any, lantype: any) => {
         //   position: 'bottom',
         //   time: 3000,
         // }),
-        console.log(error, 'Error While logging in.');
+        console.log(error, "Error While logging in.");
 
         dispatch({
           type: types.USER_LOGIN_MESSAGE,
-          payload: 'Error in server side.',
+          payload: "Error in server side.",
         });
       });
   };

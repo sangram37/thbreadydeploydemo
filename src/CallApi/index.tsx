@@ -1,12 +1,10 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
- //const API = 'https://api.thbred.com/thbredpickpack/api/';
-// const API = 'http://192.168.66.128/thbredpickpack/api/';  
- const API = 'http://192.168.3.65/thbredpickpack/api/';   //dev
+//const API = 'https://api.thbred.com/thbredpickpack/api/';
+// const API = 'http://192.168.66.128/thbredpickpack/api/';
+const API = "http://192.168.3.65/thbredpickpack/api/"; //dev
 //const API = 'http://picklist.thbred.com/api/';   //prod
 
-const loaddata = async (url:string, options:any) => {
-  console.log(url,options)
+const loaddata = async (url: string, options: any) => {
+  console.log(url, options);
   try {
     const res = await fetch(url, options);
     const data = await res.json();
@@ -35,22 +33,21 @@ const loaddata = async (url:string, options:any) => {
 //   return loaddata(apiPath, options);
 // };
 
-export const CallApi = async (method:string, apiPath:string, params:any) => {
-//  console.log(params,"params")
+export const CallApi = async (method: string, apiPath: string, params: any) => {
+  //  console.log(params,"params")
 
- 
   // alert(token,"Token")
-    const url = `${API + apiPath}`;
-     console.log(url, "url")
-    let options = {
-      method: method,
-      headers: {
-        // Authorization: `Bearer ${token}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: params,
-    };
-  
-    return loaddata(url, options);
+  const url = `${API + apiPath}`;
+  console.log(url, "url");
+  let options = {
+    method: method,
+    headers: {
+      // Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: params,
   };
+
+  return loaddata(url, options);
+};

@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { itemData } from "../../Constans/Jsonassets";
 interface Props {}
 
-const OrderItems: React.FC<Props> = (props: any) => {
+const OrderItems: React.FC<Props> = () => {
   return (
     <>
       <div className={styles.orders_wrapper}>
